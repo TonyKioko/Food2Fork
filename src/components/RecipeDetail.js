@@ -4,8 +4,10 @@ class RecipeDetail extends Component {
   render() {
     return (
         <React.Fragment>
-        Hello from RecipeDetails
+<h1>
+Hello from RecipeDetails
 
+</h1>
   </React.Fragment>
     )
   }
