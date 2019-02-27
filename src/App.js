@@ -28,9 +28,9 @@ console.log(error)
     }
   }
 
-  componentDidMount() {
-    this.getRecipes()
-  }
+  // componentDidMount() {
+  //   this.getRecipes()
+  // }
   handleDetails =(index,id) => {
     this.setState({
       pageIndex:index,
