@@ -10,7 +10,7 @@ import RecipeDetails from './components/RecipeDetail';
 class App extends Component {
 
   state = {
-    recipes:[recipes],
+    recipes:recipes,
     url:'https://www.food2fork.com/api/search?key=706e34a6cd0040671f82652ba3e62c88',
     details_id:35382,
     pageIndex:0
@@ -31,24 +31,36 @@ console.log(error)
   componentDidMount() {
     this.getRecipes()
   }
-
+  handleDetails =(index,id) => {
+    this.setState({
+      pageIndex:index,
+      details_id:id
+    })
+  }
+  handleIndex =(index) => {
+    this.setState({
+      pageIndex:index
+    })
+  }
   displayPage=(index) => {
     switch(index){
       default:
       case 1:
         return (
-        <RecipeList recipes={this.state.recipes} />
+        <RecipeList recipes={this.state.recipes} handleDetails={this.handleDetails} />
 
          )
       case 0:
           return(
 
-        <RecipeDetails id={this.state.details_id} />
+        <RecipeDetails id={this.state.details_id} handleIndex={this.handleIndex} />
 
           )
 
     }
   }
+
+  
   render() {
 // console.log(this.state.recipes)
 
