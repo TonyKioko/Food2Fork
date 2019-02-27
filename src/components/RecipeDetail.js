@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { recipe } from '../tempDetails'
 
 class RecipeDetail extends Component {
   render() {
