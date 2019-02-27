@@ -37,7 +37,7 @@ console.log(error)
   
   render() {
     const { image_url,publisher,publisher_url,source_url,title,ingredients } = this.state.recipe;
-    console.log(this.state.recipe)
+    // console.log(this.state.recipe)
     return (
         <React.Fragment>
 <div className="container">
