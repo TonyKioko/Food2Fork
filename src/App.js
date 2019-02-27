@@ -14,28 +14,28 @@ class App extends Component {
     url:'https://www.food2fork.com/api/search?key=706e34a6cd0040671f82652ba3e62c88'
   }
 
-//   async getRecipes(){
-//     try{
-//       const data = await fetch(this.state.url)
-//       const jsonData = await data.json()
-//       this.setState({
-//         recipes:jsonData.recipes
-//       })
-//     }catch(error){
-// console.log(error)
-//     }
-//   }
+  async getRecipes(){
+    try{
+      const data = await fetch(this.state.url)
+      const jsonData = await data.json()
+      this.setState({
+        recipes:jsonData.recipes
+      })
+    }catch(error){
+console.log(error)
+    }
+  }
 
-//   componentDidMount() {
-//     this.getRecipes()
-//   }
+  componentDidMount() {
+    this.getRecipes()
+  }
   render() {
 console.log(this.state.recipes)
 
     return (
       <React.Fragment>
         Hello from App
-        <RecipeList />
+        <RecipeList recipes={this.state.recipes} />
         <RecipeDetails />
 
       </React.Fragment>
