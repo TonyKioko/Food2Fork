@@ -16,16 +16,28 @@ class App extends Component {
     details_id:35382,
     pageIndex:0,
     search:"",
-    query:'&q='
+    query:'&q=',
+    error:""
   }
 
   async getRecipes(){
     try{
       const data = await fetch(this.state.url)
       const jsonData = await data.json()
-      this.setState({
-        recipes:jsonData.recipes
-      })
+
+      if (jsonData.length === 0){
+        this.setState(()=>{
+         return{
+          error:"Search Found No Matches"
+
+         } 
+        })
+      } else {
+        this.setState({
+          recipes:jsonData.recipes
+        })
+      }
+      
     }catch(error){
 console.log(error)
     }
@@ -50,7 +62,7 @@ console.log(error)
       default:
       case 1:
         return (
-        <RecipeList recipes={this.state.recipes} handleDetails={this.handleDetails} value={this.state.value} handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
+        <RecipeList recipes={this.state.recipes} handleDetails={this.handleDetails} value={this.state.value} handleChange={this.handleChange} handleSubmit={this.handleSubmit} error={this.state.error}/>
 
          )
       case 0:
