@@ -13,8 +13,8 @@ class App extends Component {
     recipes:recipes,
     url:'https://www.food2fork.com/api/search?key=706e34a6cd0040671f82652ba3e62c88',
     base_url:'https://www.food2fork.com/api/search?key=706e34a6cd0040671f82652ba3e62c88',
-    details_id:35382,
-    pageIndex:0,
+    details_id:'',
+    pageIndex:1,
     search:"",
     query:'&q=',
     error:""
@@ -43,9 +43,9 @@ console.log(error)
     }
   }
 
-  // componentDidMount() {
-  //   this.getRecipes()
-  // }
+  componentDidMount() {
+    this.getRecipes()
+  }
   handleDetails =(index,id) => {
     this.setState({
       pageIndex:index,

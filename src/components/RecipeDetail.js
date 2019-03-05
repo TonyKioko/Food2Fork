@@ -37,7 +37,7 @@ console.log(error)
   
   render() {
     const { image_url,publisher,publisher_url,source_url,title,ingredients } = this.state.recipe;
-    // console.log(this.state.recipe)
+    console.log(this.state.recipe)
 
     const { handleIndex }=this.props;
 
@@ -46,7 +46,7 @@ console.log(error)
 <div className="container">
   <div className="row">
   <div className="col-10 mx-auto col-md-6 my-3">
-      <button className="btn btn-warning mb-5 text-capitalize" onClick={handleIndex(1)}>
+      <button className="btn btn-warning mb-5 text-capitalize" onClick={()=>handleIndex(1)}>
       back to recipe list
       </button>
       <img src={image_url} alt="" className="d-block w-100"/>
