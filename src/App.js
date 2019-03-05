@@ -25,7 +25,7 @@ class App extends Component {
       const data = await fetch(this.state.url)
       const jsonData = await data.json()
 
-      if (jsonData.length === 0){
+      if (jsonData.recipes.length === 0){
         this.setState(()=>{
          return{
           error:"Search Found No Matches"
